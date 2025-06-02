@@ -88,10 +88,6 @@ ul {
 	display: grid;
 	grid-template-columns: 8fr 2fr;
 
-	/* > div {
-		border: 0.5px solid red;
-	} */
-
 	.search-container {
 		display: flex;
 		justify-content: center;
@@ -168,34 +164,86 @@ ul {
 
 .main-content {
 	grid-area: main;
-	border: 1px solid red;
 	display: grid;
-	grid-template-columns: repeat(3, minmax(min-content, 1fr));
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas:
-		"projects projects announcements"
-		"projects projects trending";
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(6, 115px);
+	padding: 4em 1em;
+	gap: 1em;
 
-	.your-projects {
-		grid-area: projects;
-		border: 1px solid red;
+	.projects {
+		display: contents;
+		position: relative;
+
+		h2 {
+			position: absolute;
+			margin-top: -2em;
+		}
 
 		.cards {
-			display: flex;
-			flex-wrap: wrap;
-			padding: 1em;
-			overflow-y: auto;
+			display: contents;
+			> div {
+				grid-row: span 2;
+			}
 		}
 	}
 
 	.announcements {
-		grid-area: announcements;
 		border: 1px solid red;
+		grid-column: 3;
+		grid-row: 1 / span 3;
+		background-color: #fff;
+		padding: 2em 2em;
+
+		h2 {
+			position: absolute;
+			margin-top: -4em;
+			margin-left: -1em;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+		}
+
+		li {
+			border-bottom: 1px solid grey;
+			padding: 1em 0;
+
+			&:last-of-type {
+				border-bottom-width: 0;
+			}
+		}
 	}
 
 	.trending {
-		grid-area: trending;
 		border: 1px solid red;
+		grid-column: 3;
+		grid-row: 4 / span 3;
+
+		> div {
+			background-color: #fff;
+			padding: 2em 2em;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+		}
+
+		li {
+			border-bottom: 1px solid grey;
+			padding: 1em 0;
+
+			p {
+				font-size: 0.6em;
+			}
+
+			&:last-of-type {
+				border-bottom-width: 0;
+			}
+		}
 	}
 }
 
@@ -220,8 +268,19 @@ input:valid ~ span::after {
 }
 
 .card {
-	height: 224px;
 	display: flex;
-	flex: 1 1 400px;
-	border: 1px solid red;
+	flex-direction: column;
+	flex: 1 1 auto;
+	background-color: white;
+	border-left: 9px solid #f0b42a;
+	border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	padding: 2em 1em;
+	gap: 1em;
+
+	> ul {
+		display: flex;
+		justify-content: end;
+		gap: 2em;
+	}
 }

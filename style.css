@@ -9,8 +9,9 @@
 
 :root {
 	--thematic-blue: #1992d4;
-	--card-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
-		rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	--card-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+	/* --card-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+		rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
 
 *,
@@ -100,8 +101,8 @@ ul {
 	box-shadow: var(--card-shadow);
 	display: grid;
 	grid-template-columns: 8fr 2fr;
-	padding: 1em 4.2em 0 3em;
-	gap: 0 1em;
+	padding: 1.6em 4.2em 1em 3em;
+	gap: 2.5em 1em;
 
 	.search-container {
 		display: flex;
@@ -193,11 +194,11 @@ ul {
 	font-size: 1rem;
 	grid-area: main;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(6, 115px);
-	grid-auto-rows: 115px;
-	padding: 4em 2em;
-	gap: 2em;
+	grid-template-columns: 1fr 1fr 0.73fr;
+	grid-template-rows: repeat(6, 95px);
+	grid-auto-rows: 95px;
+	padding: 4.7em 1.4em 4em;
+	gap: 2em 1.5em;
 
 	.projects {
 		display: contents;
@@ -206,6 +207,7 @@ ul {
 		h2 {
 			position: absolute;
 			margin-top: -2em;
+			font-size: 1.1em;
 		}
 
 		.cards {
@@ -221,6 +223,7 @@ ul {
 		h2 {
 			position: absolute;
 			margin-top: -2em;
+			font-size: 1.1em;
 		}
 
 		ul {
@@ -231,13 +234,12 @@ ul {
 
 			padding: 1.5em 2em;
 			background-color: #fff;
-			border-radius: 1.4em;
+			border-radius: 0.8em;
 			box-shadow: var(--card-shadow);
 		}
 
 		li {
 			border-bottom: 1px solid grey;
-			padding: 1em 0;
 
 			p {
 				display: -webkit-box;
@@ -259,16 +261,20 @@ ul {
 		flex-direction: column;
 		gap: 0.8em;
 
+		h2 {
+			font-size: 1.1em;
+			margin-top: 0.4em;
+		}
+
 		ul {
 			display: flex;
-			flex: 1 1 min-content;
+			flex: 1 1 auto;
 			flex-direction: column;
 			justify-content: space-between;
 
 			background-color: #fff;
 			padding: 2em 2em;
-			gap: 1em;
-			border-radius: 1.4em;
+			border-radius: 0.8em;
 			box-shadow: var(--card-shadow);
 		}
 
@@ -280,7 +286,7 @@ ul {
 			p {
 				display: -webkit-box;
 				-webkit-box-orient: vertical;
-				-webkit-line-clamp: 2;
+				-webkit-line-clamp: 1;
 				overflow: hidden;
 			}
 		}
@@ -295,20 +301,6 @@ ul {
 	border: 1px solid black;
 }
 
-input:invalid ~ span::after {
-	content: "✖";
-	padding-left: 5px;
-	position: absolute;
-	border: 2px solid red;
-}
-
-input:valid ~ span::after {
-	content: "✓";
-	padding-left: 5px;
-	position: absolute;
-	border: 2px solid red;
-}
-
 .card {
 	grid-row: span 2;
 	display: flex;
@@ -316,10 +308,10 @@ input:valid ~ span::after {
 	justify-content: space-between;
 	flex: 1 1 auto;
 	background-color: white;
-	border-left: 9px solid #f0b42a;
+	border-left: 0.45em solid #f0b42a;
 	border-radius: 8px;
 	box-shadow: var(--card-shadow);
-	padding: 2em 1em;
+	padding: 2.5em 1.6em;
 
 	p {
 		display: -webkit-box;

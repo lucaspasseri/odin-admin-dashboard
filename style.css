@@ -8,7 +8,23 @@
 }
 
 :root {
-	--thematic-blue: #1992d4;
+	/* Colors from the project design file*/
+	/* --sidebar-color: #1992d4;
+	--main-color: #e2e8f0;
+	--card-main-color: white;
+	--card-border-color: #f0b42a;
+	--sidebar-text-color: white;
+	--main-header-color: black;
+	--header-color: white; */
+
+	--sidebar-color: #2a2a2a;
+	--main-color: white;
+	--card-main-color: #ffff9b;
+	--card-border-color: #2a2a2a;
+	--sidebar-text-color: #f4f440;
+	--main-header-color: black;
+	--header-color: #e8e8e8;
+
 	--card-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
@@ -30,7 +46,7 @@ body {
 	line-height: 1.5;
 	min-height: 100%;
 	font-family: "keep-calm", sans-serif;
-	background-color: #e2e8f0;
+	background-color: var(--main-color);
 	display: flex;
 	min-width: 100%;
 	flex: 1 1 auto;
@@ -56,10 +72,11 @@ ul {
 }
 
 .sidebar {
-	background-color: var(--thematic-blue);
+	background-color: var(--sidebar-color);
 	color: #fff;
 	grid-area: sidebar;
 	font-size: 1rem;
+	color: var(--sidebar-text-color);
 	padding: 1.8em;
 	display: grid;
 	gap: 4em;
@@ -91,13 +108,14 @@ ul {
 
 		a {
 			margin-bottom: -0.3em;
+			color: var(--sidebar-text-color);
 		}
 	}
 }
 
 .header {
 	grid-area: header;
-	background-color: #fff;
+	background-color: var(--header-color);
 	font-size: 1rem;
 	box-shadow: var(--card-shadow);
 	display: grid;
@@ -184,12 +202,13 @@ ul {
 		}
 
 		li {
-			background-color: var(--thematic-blue);
+			background-color: var(--sidebar-color);
 			padding: 0.8em 2em 0.6em;
 			border-radius: 1.6em;
 
 			a {
 				margin-top: 20px;
+				color: var(--sidebar-text-color);
 			}
 		}
 	}
@@ -223,6 +242,7 @@ ul {
 			position: absolute;
 			margin-top: -2em;
 			font-size: 1.1em;
+			color: var(--main-header-color);
 		}
 
 		.cards {
@@ -245,6 +265,7 @@ ul {
 			position: absolute;
 			margin-top: -2em;
 			font-size: 1.1em;
+			color: var(--main-header-color);
 		}
 
 		ul {
@@ -254,9 +275,9 @@ ul {
 			justify-content: space-between;
 
 			padding: 1.5em 2em;
-			background-color: #fff;
 			border-radius: 0.8em;
 			box-shadow: var(--card-shadow);
+			background-color: var(--card-main-color);
 		}
 
 		li {
@@ -307,6 +328,7 @@ ul {
 		h2 {
 			font-size: 1.1em;
 			margin-top: 0.4em;
+			color: var(--main-header-color);
 		}
 
 		ul {
@@ -315,7 +337,7 @@ ul {
 			flex-direction: column;
 			justify-content: space-between;
 
-			background-color: #fff;
+			background-color: var(--card-main-color);
 			padding: 2em 2em;
 			border-radius: 0.8em;
 			box-shadow: var(--card-shadow);
@@ -350,11 +372,12 @@ ul {
 	flex: 1 1 auto;
 	flex-direction: column;
 	justify-content: space-between;
-	background-color: white;
-	border-left: 0.45em solid #f0b42a;
+	background-color: var(--card-main-color);
+	border-left: 0.45em solid var(--card-border-color);
 	border-radius: 8px;
 	box-shadow: var(--card-shadow);
 	padding: 2.5em 1.6em;
+	color: var(--card-text-color);
 
 	p {
 		display: -webkit-box;
